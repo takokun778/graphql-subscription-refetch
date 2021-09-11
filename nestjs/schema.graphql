@@ -1,0 +1,30 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Hoge {
+  """id"""
+  id: ID!
+  foo: String!
+  bar: String!
+}
+
+type Query {
+  hoge: [Hoge!]!
+}
+
+type Mutation {
+  createHoge(bar: String!, foo: String!): Hoge!
+  updateHoge(updateHogeInput: UpdateHogeInput!): Hoge!
+  removeHoge(id: ID!): Hoge!
+}
+
+input UpdateHogeInput {
+  foo: String!
+  bar: String!
+  id: ID!
+}
+
+type Subscription {
+  onHoge: Hoge!
+}
