@@ -9,6 +9,11 @@ type Hoge {
   bar: String!
 }
 
+type Event {
+  id: ID!
+  hogeId: ID!
+}
+
 type Query {
   hoge: [Hoge!]!
 }
@@ -17,6 +22,7 @@ type Mutation {
   createHoge(bar: String!, foo: String!): Hoge!
   updateHoge(updateHogeInput: UpdateHogeInput!): Hoge!
   removeHoge(id: ID!): Hoge!
+  event(hogeId: String!, id: String!): Event!
 }
 
 input UpdateHogeInput {
@@ -27,4 +33,5 @@ input UpdateHogeInput {
 
 type Subscription {
   onHoge: Hoge!
+  onEvent(hogeId: String!, id: String!): Event!
 }
